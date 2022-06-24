@@ -81,14 +81,13 @@ public class MemController {
 	 */
 	
 
-	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public ResponseEntity<String> inserMethod(@RequestBody MemDTO dto){
-//	public ResponseEntity<String> inserMethod(@RequestParam int num, String name){
+//	public ResponseEntity<String> inserMethod(@RequestParam String name, int age){
 		ResponseEntity<String> entity=null;
+//		System.out.println("name:"+name);
 		System.out.println(dto.getNum() + " "+ dto.getName());
-//		System.out.println("num:"+num);
-//		System.out.println("name:"+name);
-//		System.out.println("name:"+name);
+//		System.out.println("age:"+age);
 		try {
 		dao.register(dto);
 		entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
@@ -101,8 +100,8 @@ public class MemController {
 	
 	
 	
-//	http://localhost:8090/myapp/mem/update
 	//{"num":10,"name":"Steven"}
+//	http://localhost:8090/myapp/mem/update
 		@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public ResponseEntity<String> updateMethod(@RequestBody MemDTO dto){
 		ResponseEntity<String> entity= null;

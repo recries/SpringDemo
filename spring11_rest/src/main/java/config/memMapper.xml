@@ -26,7 +26,8 @@
 	</insert>
 	
 	<update id="upt" parameterType="dto.MemDTO">
-	 update mem set  name=#{name} where num=#{num}
+	 update mem set  name=#{name},age=#{age}, loc=#{loc}
+	  where num=#{num}
 	</update>
 
     <delete id="del" parameterType="int">
